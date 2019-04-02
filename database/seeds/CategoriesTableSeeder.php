@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     database
  * @subpackage  seeds
  */
@@ -24,7 +24,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $category_example = DB::table('categories')->where('id', '123456')->exists();
-        if(!$category_example) {
+        if (!$category_example) {
             Category::create([
                 'id'    => 123456,
                 'name'    => 'Ferramentas',

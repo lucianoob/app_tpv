@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     controllers
  */
 
@@ -22,7 +22,7 @@ use App\Jobs\NotifyUserOfCompletedImport;
  * Classe Products Controller
  */
 class ProductsController extends Controller
-{   
+{
     /** Filename of the sheet. */
     protected $filename;
     /** Sheet imported */
@@ -33,7 +33,7 @@ class ProductsController extends Controller
     /**
      * Constructor of the class.
      */
-    public function __construct() 
+    public function __construct()
     {
         $this->filename = public_path('/products.xlsx');
     }
@@ -94,7 +94,7 @@ class ProductsController extends Controller
     protected function process($filename)
     {
         $this->filename = $filename;
-        if(file_exists($this->filename)) {
+        if (file_exists($this->filename)) {
             $this->sheet_proccess = new SheetsController();
             $this->sheet = $this->sheet_proccess->store($this->filename);
             Excel::queueImport(new ProductsImport, $this->filename)->chain([

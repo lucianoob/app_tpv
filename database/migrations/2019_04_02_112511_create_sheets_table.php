@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     database
  * @subpackage  migrations
  */
@@ -31,7 +31,8 @@ class CreateSheetsTable extends Migration
                 $table->string('hash');
                 $table->datetime('start');
                 $table->integer('queue');
-                $table->datetime('stop')->nullable();;
+                $table->datetime('stop')->nullable();
+                ;
                 $table->integer('process');
                 $table->timestamps();
             });

@@ -13,9 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(array('prefix' => '/'), function() {
+Route::group(array('prefix' => '/'), function () {
     Route::get('/', function () {
-        return response()->json(['message' => 'App TPV API', 'status' => 'Connected']);;
+        return response()->json(['message' => 'App TPV API', 'status' => 'Connected']);
+        ;
     });
     Route::resource('products', 'ProductsController');
     Route::get('sheets', 'SheetsController@index')->name('sheets.index');

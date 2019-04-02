@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     graphql
  */
 
@@ -65,7 +65,7 @@ class ProductsQuery extends Query
     {
         $where = function ($query) use ($args) {
             if (isset($args['id'])) {
-                $query->where('id',$args['id']);
+                $query->where('id', $args['id']);
             }
         };
         $products = Product::with(array_keys($fields->getRelations()))

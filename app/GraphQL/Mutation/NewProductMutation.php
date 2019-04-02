@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     graphql
  */
 
@@ -74,7 +74,7 @@ class NewProductMutation extends Mutation
     public function resolve($root, $args, SelectFields $fields, ResolveInfo $info)
     {
         $filename = $args['filename'];
-        if(file_exists($filename)) {
+        if (file_exists($filename)) {
             $this->sheet_proccess = new SheetsController();
             $this->sheet = $this->sheet_proccess->store($filename);
             Excel::queueImport(new ProductsImport, $filename)->chain([

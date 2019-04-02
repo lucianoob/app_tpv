@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     tests
  */
 
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Storage;
  * Class Products Tests
  */
 class ProductsTest extends TestCase
-{   
+{
    
     /**
      * Test of products create from local file.
@@ -80,14 +80,17 @@ class ProductsTest extends TestCase
     public function testProductsUpdate()
     {
         $last_product = DB::table('products')->where('id', '1002')->first();
-        $this->json('PUT', '/api/products/'.$last_product->id,
+        $this->json(
+            'PUT',
+            '/api/products/'.$last_product->id,
             [
                 'category'    => 123456,
                 'name'    => 'Ferramenta de Teste',
                 'free_shipping'    => 1,
                 'description'    => 'Ferramenta alterada por meio de um teste.',
                 'price'   =>  200
-            ])
+            ]
+        )
             ->assertResponseOk();
     }
 

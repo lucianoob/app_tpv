@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     controllers
  */
 
@@ -68,7 +68,7 @@ class SheetsController extends Controller
     {
         $sheet = Sheet::find($id);
         if (!$sheet) {
-            return NULL;
+            return null;
         }
         $sheet->fill([
             'queue' => 0,
@@ -90,7 +90,7 @@ class SheetsController extends Controller
     {
         $sheet = Sheet::find($id);
         if (!$sheet) {
-            return NULL;
+            return null;
         }
         $sheet->delete();
     }

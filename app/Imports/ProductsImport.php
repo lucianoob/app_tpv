@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     imports
  */
 
@@ -31,17 +31,17 @@ class ProductsImport implements ToModel, WithHeadingRow, WithChunkReading, Shoul
     public function model(array $row)
     {
         $product = DB::table('products')->where('id', $row['id'])->exists();
-        if(!$product) {
+        if (!$product) {
             return new Product([
             'id'     => $row['id'],
             'category'     => 123456,
             'name'     => $row['name'],
-            'free_shipping'    => $row['free_shipping'], 
+            'free_shipping'    => $row['free_shipping'],
             'description' => $row['description'],
             'price' => $row['price']
             ]);
         } else {
-            return NULL;
+            return null;
         }
     }
 

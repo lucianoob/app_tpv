@@ -3,7 +3,7 @@
  * $this
  *
  * @author      Luciano O. Borges <luciano@iautomate.com.br>
- * @copyright   2019 
+ * @copyright   2019
  * @package     graphql
  */
 
@@ -19,7 +19,7 @@ use Rebing\GraphQL\Support\Type as GraphQLType;
  */
 class SheetsType extends GraphQLType
 {
-     /** Atributes of the information of class. */
+    /** Atributes of the information of class. */
     protected $attributes = [
         'name' => 'Sheets',
         'description' => 'A type of the sheets.',
