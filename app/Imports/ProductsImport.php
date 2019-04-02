@@ -1,4 +1,11 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     imports
+ */
 
 namespace App\Imports;
 
@@ -9,8 +16,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * Class Products Import
+ */
 class ProductsImport implements ToModel, WithHeadingRow, WithChunkReading, ShouldQueue
 {
+    /**
+     * Execute import of the an row.
+     *
+     * @param  array $row An array with the row data.
+     *
+     * @return object Return an product object.
+     */
     public function model(array $row)
     {
         $product = DB::table('products')->where('id', $row['id'])->exists();
@@ -28,11 +45,21 @@ class ProductsImport implements ToModel, WithHeadingRow, WithChunkReading, Shoul
         }
     }
 
+    /**
+     * Row for start import.
+     *
+     * @return int
+     */
     public function headingRow(): int
     {
         return 3;
     }
 
+    /**
+     * Size of rows in queue job.
+     *
+     * @return int
+     */
     public function chunkSize(): int
     {
         return 3;

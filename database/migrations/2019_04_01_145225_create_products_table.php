@@ -1,9 +1,20 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     database
+ * @subpackage  migrations
+ */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class Products Migration
+ */
 class CreateProductsTable extends Migration
 {
     /**

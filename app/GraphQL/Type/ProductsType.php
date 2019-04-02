@@ -1,4 +1,12 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     graphql
+ */
+
 namespace App\GraphQL\Type;
 
 use App\Product;
@@ -6,14 +14,23 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
+/**
+ * Classe QraphQL for define Product Type
+ */
 class ProductsType extends GraphQLType
 {
+     /** Atributes of the information of class. */
     protected $attributes = [
         'name' => 'Products',
         'description' => 'A type of the products.',
         'model' => Product::class,
     ];
     
+    /**
+     * The fields of the type.
+     *
+     * @return object Return the structure of  the type.
+     */
     public function fields()
     {
         return [

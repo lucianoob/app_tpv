@@ -78,6 +78,7 @@
                 </div>
                 <div class="links">
                     <a href="{{ config('app.url') }}/api" target="_blank">API</a>
+                    <a href="{{ config('app.url') }}/docs/api/index.html" target="_blank">DOCS</a>
                     <a href="http://localhost/phpmyadmin" target="_blank">PHPMyAdmin</a>
                     <a href="{{ config('app.url') }}/graphql-ui" target="_blank">GraphQL</a>
                 </div>

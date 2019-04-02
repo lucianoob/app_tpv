@@ -1,4 +1,11 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     graphql
+ */
 
 namespace App\GraphQL\Mutation;
 
@@ -9,18 +16,32 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Rebing\GraphQL\Support\SelectFields;
 
+/**
+ * Classe QraphQL for Update Product
+ */
 class UpdateProductMutation extends Mutation
 {
+    /** Atributes of the information of class. */
     protected $attributes = [
         'name' => 'Products Update Mutation',
         'description' => 'Update products.'
     ];
 
+    /**
+     * Type of class.
+     *
+     * @return object Return an type product structure.
+     */
     public function type()
     {
         return GraphQL::type('products');
     }
 
+    /**
+     * The arguments receives for the class.
+     *
+     * @return object Return struture of the arguments.
+     */
     public function args()
     {
         return [
@@ -51,6 +72,16 @@ class UpdateProductMutation extends Mutation
         ];
     }
 
+    /**
+     * Resolve the call os the class.
+     *
+     * @param  mixed $root
+     * @param  mixed $args
+     * @param  mixed $fields
+     * @param  mixed $info
+     *
+     * @return object Return the product updated.
+     */
     public function resolve($root, $args, SelectFields $fields, ResolveInfo $info)
     {
         $product = Product::find($args['id']);

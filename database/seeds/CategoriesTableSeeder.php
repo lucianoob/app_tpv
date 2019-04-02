@@ -1,8 +1,19 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     database
+ * @subpackage  seeds
+ */
 
 use Illuminate\Database\Seeder;
 use App\Category;
 
+/**
+ * Class Categories Seeder
+ */
 class CategoriesTableSeeder extends Seeder
 {
     /**

@@ -1,4 +1,11 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     graphql
+ */
 
 namespace App\GraphQL\Type;
 
@@ -7,14 +14,23 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
+/**
+ * Classe QraphQL for define Product Type
+ */
 class SheetsType extends GraphQLType
 {
+     /** Atributes of the information of class. */
     protected $attributes = [
         'name' => 'Sheets',
         'description' => 'A type of the sheets.',
         'model' => Sheet::class,
     ];
 
+    /**
+     * The fields of the type.
+     *
+     * @return object Return the structure of  the type.
+     */
     public function fields()
     {
         return [

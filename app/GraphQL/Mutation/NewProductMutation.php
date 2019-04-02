@@ -1,4 +1,11 @@
 <?php
+/**
+ * $this
+ *
+ * @author      Luciano O. Borges <luciano@iautomate.com.br>
+ * @copyright   2019 
+ * @package     graphql
+ */
 
 namespace App\GraphQL\Mutation;
 
@@ -14,20 +21,36 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\SheetsController;
 use App\Jobs\NotifyUserOfCompletedImport;
 
+/**
+ * Classe QraphQL for New Product
+ */
 class NewProductMutation extends Mutation
 {
+    /** Atributes of the information of class. */
     protected $attributes = [
         'name' => 'Product New Mutation',
         'description' => 'New products.'
     ];
+    /** Sheet imported */
     protected $sheet;
+    /** Sheet controller */
     protected $sheet_proccess;
 
+    /**
+     * Type of class.
+     *
+     * @return object Return an type product structure.
+     */
     public function type()
     {
         return GraphQL::type('products');
     }
-
+    
+    /**
+     * The arguments receives for the class.
+     *
+     * @return object Return struture of the arguments.
+     */
     public function args()
     {
         return [
@@ -38,6 +61,16 @@ class NewProductMutation extends Mutation
         ];
     }
 
+    /**
+     * Resolve the call os the class.
+     *
+     * @param  mixed $root
+     * @param  mixed $args
+     * @param  mixed $fields
+     * @param  mixed $info
+     *
+     * @return void
+     */
     public function resolve($root, $args, SelectFields $fields, ResolveInfo $info)
     {
         $filename = $args['filename'];
