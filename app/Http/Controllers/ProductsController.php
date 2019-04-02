@@ -35,7 +35,7 @@ class ProductsController extends Controller
      */
     public function __construct() 
     {
-        $this->filename = "products.xlsx";
+        $this->filename = public_path('/products.xlsx');
     }
 
     /**
@@ -103,12 +103,14 @@ class ProductsController extends Controller
         } else {
             return response()->json([
                 'message' => 'File '.$this->filename.' not exist!',
+                'status' => 'error'
             ], 404);
         }
 
         return response()->json([
             'message' => 'Sheet has queue (id:'.$this->sheet['id'].')',
-        ], 200);
+            'status' => 'ok'
+        ], 201);
     }
 
     /**
