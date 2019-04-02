@@ -27,7 +27,16 @@ sed -i 's/##DBP##/'$pmysql'/g' .env
 echo -e "\n# Generate key..."
 php artisan key:generate
 
+echo -e "\n# Clear config..."
+php artisan config:cache
+
 echo -e "\n# Clear database..."
 php artisan migrate:refresh
+
+echo -e "\n# Make migrations..."
+php artisan migrate
+
+echo -e  "\n# Make seeds..."
+php artisan db:seed
 
 echo -e "\n### Install Complete !!!\n"
