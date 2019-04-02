@@ -30,9 +30,9 @@ Na instalação são executadas as seguintes ações:
 - Gera uma nova chave do Laravel
 - Limpa o cache da configuração do Laravel
 - Limpa o cache do Laravel
-- Executa os migrations do Laravel (App/API)
-- Executa os seeds do Laravel (App/API)
-- Executa os testes com o PHPUnit (App/API)
+- Executa os migrations do Laravel
+- Executa os seeds do Laravel
+- Executa os testes com o PHPUnit
 
 ## Controles do Projeto
 
