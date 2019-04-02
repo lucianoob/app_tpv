@@ -39,4 +39,7 @@ php artisan migrate
 echo -e  "\n# Make seeds..."
 php artisan db:seed
 
+echo -e "\n# Execute feature and unit tests..."
+phpunit --debug
+
 echo -e "\n### Install Complete !!!\n"
